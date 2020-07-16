@@ -22,4 +22,24 @@ function timer(){
     }
 }
 
-interval = setInterval(timer, 10)
+
+function start(){
+    interval = setInterval(timer, 10)
+    document.getElementById("myBtn").disabled = true;
+}
+function pause(){
+    clearInterval(interval)
+    document.getElementById("myBtn").disabled = false;
+}
+
+function reset(){
+    min = 0
+    sec = 0
+    msec = 0
+    minHeading.innerHTML = min;
+    secHeading.innerHTML = sec;
+    msecHeading.innerHTML = msec;
+    pause()
+    document.getElementById("myBtn").disabled = false;
+}
+
